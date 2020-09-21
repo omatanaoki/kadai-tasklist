@@ -11,11 +11,11 @@ class TasksController extends Controller
     public function index()
     {
         // メッセージ一覧を取得
-        $messages = Task::all();
+        $tasks = Task::all();
 
         // メッセージ一覧ビューでそれを表示
         return view('tasks.index', [
-            'tasks' => $messages,
+            'tasks' => $tasks,
         ]);
     }
    
