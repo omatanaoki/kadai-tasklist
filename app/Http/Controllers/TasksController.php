@@ -24,11 +24,11 @@ class TasksController extends Controller
       // getでmessages/createにアクセスされた場合の「新規登録画面表示処理」
     public function create()
     {
-        $message = new Task;
+        $task = new Task;
 
         // メッセージ作成ビューを表示
         return view('tasks.create', [
-            'message' => $message,
+            'task' => $task,
         ]);
     }
 
@@ -36,9 +36,9 @@ class TasksController extends Controller
     public function store(Request $request)
     {
         // メッセージを作成
-        $message = new Task;
-        $message->content = $request->content;
-        $message->save();
+        $task = new Task;
+        $task->content = $request->content;
+        $task->save();
 
         // トップページへリダイレクトさせる
         return redirect('/');
@@ -47,11 +47,11 @@ class TasksController extends Controller
     public function show($id)
     {
         // idの値でメッセージを検索して取得
-        $message = Task::findOrFail($id);
+        $task = Task::findOrFail($id);
 
         // メッセージ詳細ビューでそれを表示
         return view('tasks.show', [
-            'message' => $message,
+            'task' => $task,
         ]);
     }
 
@@ -59,11 +59,11 @@ class TasksController extends Controller
     public function edit($id)
     {
         // idの値でメッセージを検索して取得
-        $message =Task::findOrFail($id);
+        $task =Task::findOrFail($id);
 
         // メッセージ編集ビューでそれを表示
         return view('tasks.edit', [
-            'message' => $message,
+            'task' => $task,
         ]);
     }
 
@@ -71,10 +71,10 @@ class TasksController extends Controller
     public function update(Request $request, $id)
     {
         // idの値でメッセージを検索して取得
-        $message = Task::findOrFail($id);
+        $task = Task::findOrFail($id);
         // メッセージを更新
-        $message->content = $request->content;
-        $message->save();
+        $task->content = $request->content;
+        $task->save();
 
         // トップページへリダイレクトさせる
         return redirect('/');
@@ -84,9 +84,9 @@ class TasksController extends Controller
     public function destroy($id)
     {
         // idの値でメッセージを検索して取得
-        $message = Task::findOrFail($id);
+        $task = Task::findOrFail($id);
         // メッセージを削除
-        $message->delete();
+        $task->delete();
 
         // トップページへリダイレクトさせる
         return redirect('/');

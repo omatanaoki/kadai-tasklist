@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($message, ['route' => 'tasks.store']) !!}
+            {!! Form::model($task, ['route' => 'tasks.store']) !!}
 
                 <div class="form-group">
                     {!! Form::label('content', 'メッセージ:') !!}
@@ -19,3 +19,4 @@
         </div>
     </div>
 @endsection
+

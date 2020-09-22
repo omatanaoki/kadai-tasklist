@@ -4,7 +4,7 @@
 
     <h1>メッセージ一覧</h1>
 
-    @if (count($tasks  ) > 0)
+    @if (count($tasks ) > 0)
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -13,11 +13,11 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($tasks  as $message)
+                @foreach ($tasks as $task)
                 <tr>
                      {{-- メッセージ詳細ページへのリンク --}}
-                    <td>{!! link_to_route('tasks.show', $message->id, ['message' => $message->id]) !!}</td>
-                    <td>{{ $message->content }}</td>
+                    <td>{!! link_to_route('tasks.show', $task->id, ['task' => $task->id]) !!}</td>
+                    <td>{{ $task->content }}</td>
                 </tr>
                 @endforeach
             </tbody>

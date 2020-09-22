@@ -2,24 +2,24 @@
 
 @section('content')
 
-    <h1>id = {{ $message->id }} のメッセージ詳細ページ</h1>
+    <h1>id = {{ $task->id }} のメッセージ詳細ページ</h1>
 
     <table class="table table-bordered">
         <tr>
             <th>id</th>
-            <td>{{ $message->id }}</td>
+            <td>{{ $task->id }}</td>
         </tr>
         <tr>
             <th>メッセージ</th>
-            <td>{{ $message->content }}</td>
+            <td>{{ $task->content }}</td>
         </tr>
    </table>
 
     {{-- メッセージ編集ページへのリンク --}}
-    {!! link_to_route('tasks.edit', 'このメッセージを編集', ['message' => $message->id], ['class' => 'btn btn-light']) !!}
+    {!! link_to_route('tasks.edit', 'このメッセージを編集', ['task' => $task->id], ['class' => 'btn btn-light']) !!}
 
     {{-- メッセージ削除フォーム --}}
-    {!! Form::model($message, ['route' => ['tasks.destroy', $message->id], 'method' => 'delete']) !!}
+    {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
