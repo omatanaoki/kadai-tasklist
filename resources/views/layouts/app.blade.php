@@ -24,14 +24,7 @@
                 <li class="nav-item">{!! link_to_route('tasks.create', '新規メッセージの投稿', [], ['class' => 'nav-link']) !!}</li>
             </ul>
             
-             {{-- ナビゲーションバー --}}
-        @include('commons.navbar')
-
-        <div class="container">
-            {{-- エラーメッセージ --}}
-            @include('commons.error_tasks')
-
-            @yield('content')
+          
         </div>
             
             
@@ -43,6 +36,8 @@
         @include('commons.navbar')
 
         <div class="container">
+             {{-- エラーメッセージ --}}
+            @include('commons.error_tasks')
             @yield('content')
         </div>
 
