@@ -9,8 +9,8 @@
             <thead>
                 <tr>
                     <th>id</th>
-                     <th>タイトル</th>
-                    <th>メッセージ</th>
+                     <th>タスク</th>
+                    <th>ステータス</th>
                 </tr>
             </thead>
             <tbody>
