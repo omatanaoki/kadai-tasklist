@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>id = {{ $task->id }} のメッセージ詳細ページ</h1>
+  <h1>id = {{ $task->id }} のメッセージ詳細ページ</h1>
 
     <table class="table table-bordered">
         <tr>
@@ -10,11 +10,12 @@
             <td>{{ $task->id }}</td>
         </tr>
           <tr>
-            <th>タイトル</th>
+            <th>ステータス</th>
             <td>{{ $task->status }}</td>
+            
         </tr>
         <tr>
-            <th>メッセージ</th>
+            <th>タスク</th>
             <td>{{ $task->content }}</td>
         </tr>
    </table>
@@ -27,4 +28,7 @@
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
-@endsection
+
+
+
+    
